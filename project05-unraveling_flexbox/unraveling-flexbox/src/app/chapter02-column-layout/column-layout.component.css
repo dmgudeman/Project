@@ -1,0 +1,29 @@
+section	{
+		max-width:	740px;
+		margin:	0	auto;
+		display:	flex;
+                background-color: mediumaquamarine;
+}
+
+.item  {
+        color: black;
+        background-color: sandybrown;
+        text-align: center;
+}
+
+.column {
+        color: black;
+        background-color: sandybrown;
+        text-align: center;
+        
+        margin: 10px;
+        flex-grow: 1;
+        flex-shrink: 1;
+        flex-basis: 0;
+}
+section:first-of-type .column:first-of-type {
+        flex-grow: 2;
+        flex-shrink: 2;
+        flex-basis: 22px;
+
+}

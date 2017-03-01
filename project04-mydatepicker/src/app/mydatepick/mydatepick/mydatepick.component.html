@@ -1,0 +1,23 @@
+<form [formGroup]="myForm" class="date-input" (ngSubmit)="setDate()" novalidate>
+    <my-date-picker name="mydate" 
+                    [options]="myDatePickerOptions"
+                    formControlName="myDate"
+                    >
+    </my-date-picker>
+    
+     <div class="form-group ">
+                            <label for="inputDate">Input Date</label>
+                            <input 
+                                formControlName="inputDate"
+                                id="inputDate" 
+                                type="text" 
+                                class="form-control"
+                                
+                            >
+    </div>
+   
+  <!-- other controls are here... -->
+    <button type="submit" > Input Date
+
+    </button>
+</form>
