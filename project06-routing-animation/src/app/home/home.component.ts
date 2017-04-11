@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Router,} from '@angular/router';
+import { Router, ActivatedRoute }    from '@angular/router';
+
 
 @Component({
   selector: 'app-home',
@@ -8,16 +9,38 @@ import { Router,} from '@angular/router';
 })
 export class HomeComponent implements OnInit {
 
-  constructor(private _router:Router) { }
-
+  constructor( 
+           private _router:Router,
+           private _activatedRoute: ActivatedRoute){
+        //    this._router.events.pairwise().subscribe((event) => {
+        //     console.log("HomeComponent event in constructor",event);
+           
+        // });
+            let direction = this._activatedRoute.snapshot.params.slideDirection;
+            console.log("FIRST PAGE Component activated.snapshot.params", direction);
+           
+    }
   ngOnInit(){
   }
 
-  goToFirstPage (){
-    this._router.navigate(['/first']);
+  goToFirstPageRight (){
+    let slideDirection= "right"
+    this._router.navigate(['/first', {slideDirection: slideDirection}]) ;
+    this._activatedRoute.url.subscribe(() => {
+            console.log("HomeComponent activated.snapshot.params in RIGHT function", this._activatedRoute.snapshot.params);
+           }) ;
+  }
+  goToFirstPageLeft (){
+    let slideDirection= "left"
+    this._router.navigate(['/first', {slideDirection: slideDirection}]);
+     this._activatedRoute.url.subscribe(() => {
+            console.log("HomeComponent activated.snapshot.params in LEFT function", this._activatedRoute.snapshot.params);
+           }) ;
   }
 
   goToSecondPage (){
     this._router.navigate(['/second']);
   }
 }
+
+
