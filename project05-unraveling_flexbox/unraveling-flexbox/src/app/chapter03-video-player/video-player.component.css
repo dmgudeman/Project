@@ -8,14 +8,55 @@
     bottom: 0;
     left: 0;
     right: 0;
-    display:	flex;
-		justify-content:	center;
-		align-items:	flex-end;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
 }
 
 .controls {
     width: 480px;
     margin-bottom: 32px;
     padding: 12px 4px;
-    	
+}
+
+.progress-controls {
+    display: flex;
+}
+
+.time-elapsed,
+.time-remaining {
+    flex: 0 0 auto;
+}
+
+.progress-controls input[type="range"] {
+    flex: 1 1 0px;
+}
+
+.top-controls {
+    display: flex;
+    margin-bottom: 8px;
+}
+
+.volume-controls,
+.playback-controls,
+.size-controls {
+    display: flex;
+    align-items: center;
+}
+
+.playback-controls {
+    flex: 0 0 auto;
+}
+
+.volume-controls,
+.size-controls {
+    flex: 1 1 0px;
+}
+.size-controls {
+        justify-content: flex-end;
+}
+button,
+.time-elapsed,
+.time-remaining {
+        margin: 0 8px;
 }
