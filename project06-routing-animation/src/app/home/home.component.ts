@@ -1,13 +1,19 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, HostBinding,  HostListener } from '@angular/core';
 import { Router, ActivatedRoute }    from '@angular/router';
+import { routeFadeStateTrigger } from '../shared/route-animations';
 import {trigger, state, animate, style, transition, AnimationEntryMetadata} from '@angular/core';
 
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.css'],
+  animations: [
+    routeFadeStateTrigger
+  ]
 })
 export class HomeComponent implements OnInit {
+  @HostBinding('@routeFadeState') anyThing = true;
+
 
   constructor( 
            private _router:Router,

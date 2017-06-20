@@ -9,6 +9,8 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { FirstPageComponent } from './first-page/first-page.component';
 import { SecondPageComponent } from './second-page/second-page.component';
+import { routeFadeStateTrigger } from './shared/route-animations';
+import { AddressComponent } from './address/address.component'
 
 export const routes:Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
@@ -23,6 +25,7 @@ export const routes:Routes = [
     HomeComponent,
     FirstPageComponent,
     SecondPageComponent,
+    AddressComponent,
   ],
   imports: [
     BrowserModule,
